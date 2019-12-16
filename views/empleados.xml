@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="bar_empleados_action" name="empleados"
+                     res_model="bar.empleados" />
+	<menuitem name="Bar" id="menu_bar" sequence="10" />
+        <menuitem name="Inicio" id="menu_inicio" parent="menu_bar" sequence="10"/>
+        <menuitem id="bar_empleados_menu"
+                  name="Empleados"
+                  action="bar_empleados_action"
+                  parent="menu_inicio"
+                  sequence="1" />
+		  
+
+        <record id="bar_panes_view_tree" model="ir.ui.view">
+            <field name="name">Lista de empleados</field>
+            <field name="model">bar.empleados</field>
+            <field name="arch" type="xml">
+		<tree>
+                    <field name="codigo" />
+                    <field name="nombre" />
+                    <field name="precio" />
+		    <field name="direccion" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="bar_empleados_view_form" model="ir.ui.view">
+            <field name="name">Formulario de empleados</field>
+            <field name="model">bar.empleados</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="codigo" />
+                        <field name="nombre" />
+                        <field name="precio" />
+		        <field name="direccion" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="bar_empleados_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de empleados</field>
+            <field name="model">bar.empleados</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="codigo" />
+                    <field name="nombre" />
+                    <field name="precio" />
+		    <field name="direccion" />
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

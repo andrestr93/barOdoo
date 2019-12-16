@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="bar_tapa_action" name="tapa"
+                     res_model="bar.tapa" />
+        <menuitem id="bar_tapa_menu"
+                  name="Tapa"
+                  action="bar_tapa_action"
+                  parent="menu_inicio"
+                  sequence="4" />
+
+        <record id="bar_tapa_view_tree" model="ir.ui.view">
+            <field name="name">Lista de tapas</field>
+            <field name="model">bar.tapa</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo" />
+                    <field name="nombre" />
+                    <field name="precio" />
+                    <field name="cantidad" />
+                    <field name="llevar" />
+                    <field name="comida" />
+                    <field name="bebida" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="bar_tapa_view_form" model="ir.ui.view">
+            <field name="name">Formulario de tapas</field>
+            <field name="model">bar.tapa</field>
+            <field name="arch" type="xml">
+                <form>
+		    <header>
+			<button name="aniadir" type="object" string="Añadir uno" class="oe_highlight" />
+		    </header>
+                    <group>
+                        <field name="codigo" />
+                        <field name="nombre" />
+                        <field name="precio" />
+                        <field name="cantidad" />
+                        <field name="llevar" />
+                        <field name="comida" />
+                        <field name="bebida" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="bar_tapa_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de tapa</field>
+            <field name="model">bar.tapa</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="codigo" />
+                    <field name="nombre" />
+                    <field name="precio" />
+                    <field name="cantidad" />
+                    <field name="llevar" />
+                    <field name="comida" />
+                    <field name="bebida" />
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="bar_bebida_action" name="bebida"
+                     res_model="bar.bebida" />
+        <menuitem id="bar_bebida_menu"
+                  name="Bebida"
+                  action="bar_bebida_action"
+                  parent="menu_inicio"
+                  sequence="2" />
+
+        <record id="bar_bebida_view_tree" model="ir.ui.view">
+            <field name="name">Lista de bebidas</field>
+            <field name="model">bar.bebida</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo" />
+                    <field name="nombre" />
+                    <field name="marca" />
+		    <field name="precio" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="bar_bebida_view_form" model="ir.ui.view">
+            <field name="name">Formulario de bebidas</field>
+            <field name="model">bar.bebida</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="codigo" />
+                        <field name="nombre" />
+                        <field name="marca" />
+		        <field name="precio" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="bar_bebida_view_search" model="ir.ui.view">
+            <field name="name">Busqueda de bebidas</field>
+            <field name="model">bar.bebida</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="codigo" />
+                    <field name="nombre" />
+                    <field name="marca" />
+		    <field name="precio" />
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>
